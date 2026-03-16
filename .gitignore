@@ -1,0 +1,4 @@
+.venv/
+timit/
+cache/
+*.pt

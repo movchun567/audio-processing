@@ -1,0 +1,29 @@
+We created cpu and offline pipeline for BirdCLEF 2026 comptetion. 
+The instruction:
+The notebook is optimised to be used in kaggle for competition, so load the notebook on kaggle.
+training
+Run all cells top to bottom.
+Outputs: bird_sed_model.pth  +  bird_model.onnx
+bird_model.onnx.data
+bird_sed_model.pth
+submission.csv
+target_columns.json
+
+
+Competitions with violations on demand require special requirements: the model must be tested on the CPU, without an Internet connection.
+
+Competitions with violations on demand require special requirements: the model must be tested on the CPU, without an Internet connection.
+
+The task was completed as follows:
+1) 12 epochs (we completely wounded the laptop from start to finish).
+2) Since the submission did not allow us to throw the submission, we had to throw the entire laptop
+ first so that it passed on the test data and the output that it gave was our submission.
+3) It is illogical to wound the model and train it again on the tests + it also gave a Timeout
+ error, so it was decided to separate the laptop and train the inference part separately so that on the test data on the CPU and avoid this problem
+4) The execution should be without a network connection, so we decided that it is worth saving
+ the weights of the trained model and using them separately, as a new dataset birdclef-model-v1-zvuk2
+5) The experience of last year's competition showed that optimization on the CPU is necessary.
+ We chose to do this through the Open Neural Network Exchange (onnx runtime module). pip-install
+  of this module without a network is not possible properly, so we decided to download the wheels
+ separately, which were found on kaggle as birdclef-2026-download-wheels. There we needed the version:
+

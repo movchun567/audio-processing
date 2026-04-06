@@ -12,7 +12,6 @@ target_columns.json
 
 Competitions with violations on demand require special requirements: the model must be tested on the CPU, without an Internet connection.
 
-Competitions with violations on demand require special requirements: the model must be tested on the CPU, without an Internet connection.
 
 The task was completed as follows:
 1) 12 epochs (we completely wounded the laptop from start to finish).
